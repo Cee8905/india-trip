@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>India Trip Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font: "Inter", system-ui, sans-serif;
+    --text:#1d1d1f; --muted:#6b6b70; --line:#e4e4e7; --bg:#ffffff; --soft:#f5f5f6;
+    --blr:#c9dcf2; --mys:#f3dcc2; --kab:#d3e8cf; --coo:#cfe6e2; --fly:#e6e6ea; --open:#9a9aa2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text:#ececee; --muted:#a0a0a8; --line:#303036; --bg:#151517; --soft:#1e1e22;
+      --blr:#2b3d55; --mys:#4f3c26; --kab:#2f4a2c; --coo:#25453f; --fly:#2d2d33; --open:#6f6f78;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 var(--font); }
+  main { max-width:760px; margin:0 auto; padding:36px 16px 72px; }
+  a { color:inherit; text-decoration-color:var(--open); text-underline-offset:3px; }
+  h1 { font-size:28px; font-weight:600; margin:0 0 28px; letter-spacing:-.01em; }
+  h2 { font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:44px 0 12px; }
+
+  /* calendar */
+  .wk { display:grid; grid-template-columns:repeat(7, 1fr); column-gap:4px; row-gap:4px; margin-bottom:18px; }
+  .dow { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .num { font-size:18px; font-weight:600; }
+  .bar { border-radius:6px; padding:6px 8px; font-size:13px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .blr { background:var(--blr); } .mys { background:var(--mys); } .kab { background:var(--kab); }
+  .coo { background:var(--coo); } .fly { background:var(--fly); color:var(--muted); }
+  .open { border:1.5px dashed var(--open); color:var(--muted); background:transparent; }
+  .ppl { height:4px; border-radius:2px; background:var(--text); opacity:.35; margin-top:2px; }
+  .ev { font-size:11px; color:var(--muted); line-height:1.3; }
+  .s { display:none; }
+  @media (max-width:480px) { .bar { padding:6px 4px; font-size:12px; text-overflow:clip; } .l { display:none; } .s { display:inline; } }
+  .key { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+  .key i { display:inline-block; width:24px; height:4px; border-radius:2px; background:var(--text); opacity:.35; }
+
+  /* places and days */
+  .place { margin-top:28px; }
+  .ph { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; padding-bottom:8px; border-bottom:3px solid var(--c); }
+  .ph h3 { margin:0; font-size:21px; font-weight:600; }
+  .stay { font-size:14px; color:var(--muted); }
+  .map { margin:12px 0 4px; border:1.5px dashed var(--line); border-radius:8px; padding:14px; text-align:center; font-size:13px; color:var(--muted); }
+  .day { display:grid; grid-template-columns:56px 1fr; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); }
+  .d { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
+  .d b { display:block; font-size:24px; line-height:1.1; color:var(--text); letter-spacing:0; }
+  .day ul { list-style:none; margin:0; padding:0; }
+  .day li { padding:2px 0; }
+  .t { font-size:13px; color:var(--muted); }
+  .tbc { display:inline-block; font-size:12px; border:1.5px dashed var(--open); color:var(--muted); border-radius:5px; padding:1px 7px; }
+  .eat { font-size:14px; color:var(--muted); margin-top:10px; }
+  .eat b { color:var(--text); font-weight:500; }
+  .tip { font-size:14px; background:var(--soft); border-radius:8px; padding:10px 12px; margin-top:6px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>India · 18 to 31 October 2026</h1>
+
+<!-- ============ CALENDAR ============ -->
+<div class="wk">
+  <div class="dow">Sun</div><div class="dow">Mon</div><div class="dow">Tue</div><div class="dow">Wed</div><div class="dow">Thu</div><div class="dow">Fri</div><div class="dow">Sat</div>
+  <div class="num">18</div><div class="num">19</div><div class="num">20</div><div class="num">21</div><div class="num">22</div><div class="num">23</div><div class="num">24</div>
+  <div class="bar fly">Fly</div>
+  <div class="bar blr"><span class="l">Bangalore</span><span class="s">BLR</span></div>
+  <div class="bar mys" style="grid-column:span 2">Mysore</div>
+  <div class="bar kab"><span class="l">Kabini</span><span class="s">Kab</span></div>
+  <div class="bar coo" style="grid-column:span 2">Coorg</div>
+  <div></div><div class="ppl" style="grid-column:span 6"></div>
+  <div></div><div></div><div class="ev">Parade rehearsal</div><div class="ev">Jumboo Savari</div><div class="ev">Safari</div><div></div><div></div>
+</div>
+
+<div class="wk">
+  <div class="num">25</div><div class="num">26</div><div class="num">27</div><div class="num">28</div><div class="num">29</div><div class="num">30</div><div class="num">31</div>
+  <div class="bar open" style="grid-column:span 5">Not planned yet</div>
+  <div class="bar blr"><span class="l">Bangalore</span><span class="s">BLR</span></div>
+  <div class="bar fly">Fly</div>
+  <div class="ppl"></div><div style="grid-column:span 4"></div><div class="ppl"></div><div></div>
+</div>
+<div class="key"><i></i> with Tejashri and Piyush</div>
+
+<!-- ============ WEEK 1 ============ -->
+<h2>Week 1</h2>
+
+<div class="place" style="--c:var(--blr)">
+  <div class="ph"><h3>Bangalore</h3><span class="stay">Stay · Bloom Hotel, Indiranagar · nights 18, 19</span></div>
+  <div class="map">Map of Bangalore spots · coming soon</div>
+
+  <div class="day">
+    <div class="d">Sun<b>18</b></div>
+    <div>
+      <ul>
+        <li>Caroline lands <b>01:20</b> (Mon), Terminal 1</li>
+        <li>Pascal lands <b>about 05:00</b> (Mon)</li>
+      </ul>
+      <div class="tip">Take an Uber from the official pickup point inside the airport, not a driver outside. <a href="https://www.google.com/maps/search/?api=1&amp;query=Uber+pickup+point+Kempegowda+International+Airport+Terminal+1+Bengaluru">Uber pickup on Google Maps</a></div>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="d">Mon<b>19</b></div>
+    <ul>
+      <li>Brunch · <a href="https://share.google/uLpPF8Jd4LDOMLZHw">Rameshwaram Cafe</a> or Vidyarthi Bhavan</li>
+      <li><a href="https://share.google/Zdt4ZNcLEdIMCTIf1">Shri Suryanarayana Swamy Temple</a></li>
+      <li><a href="https://share.google/Ecro2mh6syHYIWDXS">Bangalore Palace</a></li>
+      <li><a href="https://share.google/jjz8ahRu4yiERkmvT">Cubbon Park</a> at sunset</li>
+      <li>Dinner · <a href="https://share.google/voE1OvHVftbAwiS29">Dali and Gala</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="place" style="--c:var(--mys)">
+  <div class="ph"><h3>Mysore</h3><span class="stay">Stay · <a href="https://www.airbnb.co.in/rooms/1408981963846585061">Airbnb</a> · nights 20, 21</span></div>
+  <div class="map">Map of Mysore spots · coming soon</div>
+
+  <div class="day">
+    <div class="d">Tue<b>20</b></div>
+    <ul>
+      <li>Drive from Bangalore <span class="t">· about 3.5 h</span></li>
+      <li>Torchlight Parade rehearsal <span class="t">· tickets booked</span></li>
+    </ul>
+  </div>
+
+  <div class="day">
+    <div class="d">Wed<b>21</b></div>
+    <ul>
+      <li>Jumboo Savari procession <span class="t">· gates 9:30 to 12:00</span></li>
+      <li>Mysore Palace</li>
+      <li>Chamundi Hill</li>
+      <li>Devaraja Market</li>
+      <li>Early night for the safari</li>
+    </ul>
+  </div>
+
+  <div class="eat"><b>Eat</b> · <a href="https://share.google/gLugpAunVyVlhMk5F">Vinayaka Mylari Dosa</a> · <a href="https://share.google/QFFV6JEqdMNHOZ9Zd">The Old House</a> · <a href="https://share.google/UN4QN72s6WX8yUhlW">SAPA Sourdough</a> · <a href="https://share.google/H80zmbEvHYe8DO0Eb">Oyster Bay</a></div>
+</div>
+
+<div class="place" style="--c:var(--kab)">
+  <div class="ph"><h3>Kabini</h3><span class="stay">Day trip</span></div>
+
+  <div class="day">
+    <div class="d">Thu<b>22</b></div>
+    <ul>
+      <li>Morning safari</li>
+      <li><span class="tbc">Evening safari? Booking link to come</span></li>
+      <li>Kabini backwaters boat ride</li>
+      <li>Lunch at a local eatery</li>
+      <li>Drive to Coorg</li>
+    </ul>
+  </div>
+</div>
+
+<div class="place" style="--c:var(--coo)">
+  <div class="ph"><h3>Coorg</h3><span class="stay">Stay · <a href="https://share.google/tk4DeRooMO6873yN9">Coorg Jungle Mist</a> · nights 22, 23, 24</span></div>
+  <div class="map">Map of Coorg spots · coming soon</div>
+
+  <div class="day">
+    <div class="d">Fri<b>23</b></div>
+    <ul>
+      <li><a href="https://mercaragoldestate.com/product/coorg-coffee-and-spice-estate-tour/#booknow">Coffee and spice estate tour</a></li>
+      <li>Namdroling Monastery (Golden Temple)</li>
+      <li>Abbi Falls</li>
+      <li>Raja Seat at sunset</li>
+      <li>Coorg Market</li>
+    </ul>
+  </div>
+
+  <div class="day">
+    <div class="d">Sat<b>24</b></div>
+    <ul>
+      <li>Mandalpatti Peak</li>
+      <li>Dubare Elephant Camp</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ WEEK 2 ============ -->
+<h2>Week 2</h2>
+
+<div class="day">
+  <div class="d">Sun<b>25</b></div>
+  <ul>
+    <li>Tejashri and Piyush head back to Bangalore</li>
+  </ul>
+</div>
+
+<div class="day">
+  <div class="d">25 to<b>29</b></div>
+  <ul><li><span class="tbc">Not planned yet</span></li></ul>
+</div>
+
+<div class="place" style="--c:var(--blr)">
+  <div class="ph"><h3>Bangalore</h3><span class="stay">Stay · to book · night 30</span></div>
+
+  <div class="day">
+    <div class="d">Fri<b>30</b></div>
+    <ul>
+      <li>Day and dinner with Tejashri</li>
+      <li>Shopping</li>
+    </ul>
+  </div>
+
+  <div class="day">
+    <div class="d">Sat<b>31</b></div>
+    <ul>
+      <li>Flight <b>04:50</b> to London, lands 13:00</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+</body>
+</html>
